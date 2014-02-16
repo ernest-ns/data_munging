@@ -24,7 +24,6 @@ class TemperatureFileReader
             end
         end
         return data_for_spread
-
     end
 
     def parse_and_fetch_data_from file_name
