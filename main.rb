@@ -1,0 +1,10 @@
+require_relative 'temperature_file_reader'
+require_relative 'temperature_spread_calculator'
+
+class Main
+	temperature_file_reader = TemperatureFileReader.new
+	collection_of_weather_data = temperature_file_reader.parse_and_fetch_data_from "weather.dat"
+	temperature_spread_calculator = TemperatureSpreadCalculator.new
+	temperature_spread_calculator.weather_data_collection = collection_of_weather_data
+	puts temperature_spread_calculator.day_with_the_minimum_spread
+end
